@@ -1,19 +1,15 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa";
 import TypingEffect from "react-typing-effect";
 
 
 import BubblesBackground from "./BubblesBackground";
-import Navbar from "./Navbar";
 import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "./Footer";
-import { ThemeProvider } from "./context/ThemeProvider";
-import ThemeToggle from "./components/ThemeToggle";
 
 
 

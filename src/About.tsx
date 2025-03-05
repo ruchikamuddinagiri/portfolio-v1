@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect } from "react";
 import { Chrono } from "react-chrono";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import mobileDevelopmentImage from "./assets/mobile_development.gif";
 import research from "./assets/research.gif";
 import lti from "./assets/lti.avif";

@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 import boxturtle from "./assets/box-turtle.png";
 import remedi from "./assets/remedi.png";
