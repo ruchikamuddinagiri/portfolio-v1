@@ -56,10 +56,10 @@ const Projects: React.FC = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
   return (
-    <div className="w-screen min-h-screen bg-[#1a1a1a]text-gray-100">
+    <div className="relative w-screen min-h-screen text-gray-100">
       <Navbar />
 
-      <div className="flex flex-col items-center pt-24 px-6">
+      <div className="relative z-10 flex flex-col items-center pt-24 px-6">
         <h2 className="text-4xl font-bold mb-8">Featured Projects</h2>
 
         {/* ✅ Projects listed one below the other */}

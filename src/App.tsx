@@ -4,19 +4,16 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import TypingEffect from "react-typing-effect";
 
-
-import BubblesBackground from "./BubblesBackground";
 import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "./Footer";
-
+import ParticlesBackground from "./particles";
 
 
 const Home: React.FC = () => {
-  const footerRef = useRef<HTMLDivElement>(null); // ✅ Reference to the footer
+  const footerRef = useRef<HTMLDivElement>(null); //  Reference to the footer
 
-  // ✅ Auto-scroll after 5 seconds
   useEffect(() => {
     const scrollTimeout = setTimeout(() => {
       if (footerRef.current) {
@@ -28,23 +25,29 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-screen min-h-screen bg-[#1a1a1a] text-gray-100 flex flex-col items-center justify-center">
-      <BubblesBackground />
+    <div className="w-screen min-h-screen text-gray-100 flex flex-col items-center justify-center">
+      {/* <BubblesBackground /> */}
+      <ParticlesBackground />
+      
 
-      {/* ✅ Main Content */}
+      {/*  Header */}
+
+      {/*  Main Content */}
       <motion.div
-        className="flex flex-col items-center text-center mt-20"
+        //className="flex flex-col items-center text-center mt-20"
+        className="relative z-10 flex flex-col items-center text-center mt-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
+        
         <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-100">
-          <TypingEffect text="🎮 Hi, I'm Ruchika" speed={70} eraseDelay={99999999} cursor={"|"} />
+          <TypingEffect text="Hi, I'm Ruchika" speed={70} eraseDelay={99999999} cursor={"|"} />
         </h1>
         <p className="text-lg md:text-xl text-gray-300 max-w-3xl">
         I Build Scalable Web, Mobile & AI Applications        </p>
 
-        {/* ✅ Buttons */}
+        {/*  Buttons */}
         <div className="mt-8 space-x-4">
           <Link to="/about">
             <motion.button
@@ -76,7 +79,7 @@ const Home: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* ✅ Footer with auto-scroll target */}
+      {/*  Footer with auto-scroll target */}
       <div ref={footerRef}>
       </div>
     </div>

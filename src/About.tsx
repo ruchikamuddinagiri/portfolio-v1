@@ -20,7 +20,8 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-screen min-h-screen bg-[#1a1a1a] text-white">
+    
+    <div className="w-screen min-h-screen text-white">
       <Navbar /> {/* ✅ Navbar added */}
       {/* Content Section */}
       <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12">
