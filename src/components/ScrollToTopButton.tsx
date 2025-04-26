@@ -26,7 +26,7 @@ const ScrollToTopButton: React.FC = () => {
     isVisible && (
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 z-50"
+        className="pointer-events-auto fixed bottom-6 right-6 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 z-50"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >

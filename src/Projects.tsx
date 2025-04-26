@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import boxturtle from "./assets/box-turtle.png";
 import remedi from "./assets/remedi.png";
 import contentCraft from "./assets/content-craft.png";
-import Navbar from "./Navbar";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 
 // Tech Logo Mapping (Using Devicon classes)
@@ -57,17 +56,24 @@ const Projects: React.FC = () => {
     }, []);
   return (
     <div className="relative w-screen min-h-screen text-gray-100">
-      <Navbar />
 
       <div className="relative z-10 flex flex-col items-center pt-24 px-6">
-        <h2 className="text-4xl font-bold mb-8">Featured Projects</h2>
+        <motion.h1
+                  className="text-5xl md:text-6xl font-bold mb-10 bg-gradient-to-r from-pink-600 to-orange-400 bg-clip-text text-transparent"
+                  style={{ WebkitTextStroke: '1px rgba(0,0,0,0.4)' }}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                 Featured Projects
+                </motion.h1>
 
         {/* ✅ Projects listed one below the other */}
         <div className="flex flex-col items-center space-y-10 w-full max-w-4xl">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="w-full max-w-3xl p-6 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105"
+              className="pointer-events-auto w-full max-w-3xl p-6 bg-[#2a2a2a] rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105"
               whileHover={{ scale: 1.05 }}
             >
               <a href={project.link} target="_blank" rel="noopener noreferrer">

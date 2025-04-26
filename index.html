@@ -6,15 +6,49 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🅡</text></svg>" />
 
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Vite + React + TS</title>
+    <title>Ruchika</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        /* overflow: hidden; */
+      }
+    
+      #fluid-canvas {
+        position: fixed;  /* Removes it from layout */
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        pointer-events: auto; /* So user can interact with it */
+        display: block;       /* Prevents extra space below */
+        background: transparent;
+      }
+    
+      #root {
+        position: relative;
+        z-index: 1;
+        pointer-events: none;
+      }
+    </style>
   </head>
   <body>
+    <canvas id="fluid-canvas"></canvas>
     <div id="root"></div>
     <div id="particles-js"></div>
     
     <script type="module" src="/src/main.tsx"></script>
+    <script src="/fluid.js"></script>
+
+    <script>
+      document.getElementById('fluid-canvas').addEventListener('click', () => {
+        console.log('✅ Fluid canvas is clickable!');
+      });
+    </script>
   </body>
 </html>

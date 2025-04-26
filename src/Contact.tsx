@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import Navbar from "./Navbar";
+import { motion } from "framer-motion";
 
 const Contact: React.FC = () => {
 
@@ -41,28 +42,36 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="w-screen min-h-screen bg-[#1a1a1a] text-gray-100 flex flex-col items-center pt-24 px-6">
+    <div className="w-screen min-h-screen text-gray-100 flex flex-col items-center pt-24 px-6 pb-12">
         <Navbar />
-      <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
-      <p className="text-lg text-gray-300 mb-8 max-w-2xl text-center">
+        <motion.h1
+                  className="text-5xl md:text-6xl font-bold mb-10 bg-gradient-to-r from-pink-600 to-orange-400 bg-clip-text text-transparent"
+                  style={{ WebkitTextStroke: '1px rgba(0,0,0,0.4)' }}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                 Get in Touch!
+                </motion.h1>
+      <p className="text-lg text-gray-900 mb-8 max-w-2xl text-center">
         Whether you have a project in mind, a job opportunity, or just want to chat, feel free to reach out. I'd love to connect!
       </p>
 
       {/* ✅ Contact Methods */}
-      <div className="flex flex-col space-y-4 text-center">
-        <a href="mailto:rrmuddinagiri@gmail.com" className="text-teal-400 hover:text-teal-300 text-lg flex items-center justify-center">
+      <div className="flex flex-col space-y-4 text-center ">
+        <a href="mailto:rrmuddinagiri@gmail.com" className="pointer-events-auto bg-gradient-to-r from-pink-600 to-orange-400 bg-clip-text text-transparent hover:text-teal-300 text-lg flex items-center justify-center">
           <FaEnvelope className="mr-2 text-xl" /> rrmuddinagiri@gmail.com
         </a>
-        <a href="https://www.linkedin.com/in/ruchika-muddinagiri/" target="_blank" className="text-teal-400 hover:text-teal-300 text-lg flex items-center justify-center">
+        <a href="https://www.linkedin.com/in/ruchika-muddinagiri/" target="_blank" className="pointer-events-auto bg-gradient-to-r from-pink-600 to-orange-400 bg-clip-text text-transparent hover:text-teal-300 text-lg flex items-center justify-center">
           <FaLinkedin className="mr-2 text-xl" /> LinkedIn
         </a>
-        <a href="https://github.com/ruchikamuddinagiri"  target="_blank" className="text-teal-400 hover:text-teal-300 text-lg flex items-center justify-center">
+        <a href="https://github.com/ruchikamuddinagiri"  target="_blank" className="pointer-events-auto bg-gradient-to-r from-pink-600 to-orange-400 bg-clip-text text-transparent hover:text-teal-300 text-lg flex items-center justify-center">
           <FaGithub className="mr-2 text-xl" /> GitHub
         </a>
       </div>
 
       {/* ✅ Contact Form */}
-      <form onSubmit={handleSubmit} className="mt-8 bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
+      <form onSubmit={handleSubmit} className="pointer-events-auto mt-8 bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
         <label className="block mb-2 text-gray-300">Your Name</label>
         <input
           type="text"
@@ -104,11 +113,11 @@ const Contact: React.FC = () => {
       </form>
 
       {/* ✅ Back Button */}
-      <Link to="/">
+      {/* <Link to="/">
         <button className="mt-8 px-6 py-3 bg-teal-600 text-white rounded-lg text-lg shadow-lg hover:bg-teal-500 focus:ring-4 focus:ring-teal-300">
           Back to Home
         </button>
-      </Link>
+      </Link> */}
     </div>
   );
 };
