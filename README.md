@@ -8,9 +8,9 @@ This project is a fully responsive, animated personal portfolio website.
 - Fluid dynamic background simulation inspired by PavelDoGreat's WebGL Fluid Simulation.
 - Fully mobile responsive and interactive.
 
-## 🚀 Demo
+##  Demo
 
-👉 [Live Demo](https://ruchikam.netlify.app/)
+ [Live Demo](https://ruchikam.netlify.app/)
 
 (Replace with your real deployed link)
 
@@ -27,9 +27,6 @@ This project is a fully responsive, animated personal portfolio website.
 
 ---
 
-## 📄 License
-
-This project is **private**.  
 All rights reserved.  
 Please do not use or redistribute without permission.
 
