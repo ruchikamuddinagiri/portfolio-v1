@@ -1,22 +1,8 @@
-import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import TypingEffect from "react-typing-effect";
-import Navbar from "./Navbar";
 import me from "./assets/me.jpg"; // ✅ Import your image file
 
 const Home: React.FC = () => {
-    // const footerRef = useRef<HTMLDivElement>(null); //  Reference to the footer
-  
-    // useEffect(() => {
-    //   const scrollTimeout = setTimeout(() => {
-    //     if (footerRef.current) {
-    //       footerRef.current.scrollIntoView({ behavior: "smooth" });
-    //     }
-    //   }, 5000); // 5 seconds delay before scrolling
-  
-    //   return () => clearTimeout(scrollTimeout); // Cleanup on unmount
-    // }, []);
-  
     return (
       <div className="w-screen min-h-screen text-gray-100 flex flex-col items-center justify-center pointer-events-none">
         <motion.div

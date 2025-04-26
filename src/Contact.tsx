@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import Navbar from "./Navbar";
 import { motion } from "framer-motion";
