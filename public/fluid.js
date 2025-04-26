@@ -31,12 +31,12 @@ let config = {
     SIM_RESOLUTION: 128,
     DYE_RESOLUTION: 1024,
     CAPTURE_RESOLUTION: 512,
-    DENSITY_DISSIPATION: 1,
-    VELOCITY_DISSIPATION: 0.2,
+    DENSITY_DISSIPATION: 4,
+    VELOCITY_DISSIPATION: 1.22,
     PRESSURE: 0.8,
     PRESSURE_ITERATIONS: 20,
-    CURL: 30,
-    SPLAT_RADIUS: 0.25,
+    CURL: 6,
+    SPLAT_RADIUS: 0.38,
     SPLAT_FORCE: 4000,
     SHADING: true,
     COLORFUL: false,
@@ -1554,15 +1554,17 @@ function correctDeltaY (delta) {
 }
 
 function generateColor () {
-    // let c = HSVtoRGB(Math.random(), 1.0, 1.0);
-    // c.r *= 0.15;
-    // c.g *= 0.15;
-    // c.b *= 0.15;
+
+    const t = Math.random();
+
+    // Adjusted colors
+    const pink = { r: 0.95, g: 0.6, b: 0.7 };
+    const softOrange = { r: 1.0, g: 0.7, b: 0.5 }; // not harsh orange
 
     const c = {
-        r: 0.95, // full white (or slightly pinkish)
-        g: 0.6, // slightly less green
-        b: 0.7, // soft pink tone
+        r: pink.r + (softOrange.r - pink.r) * t,
+        g: pink.g + (softOrange.g - pink.g) * t,
+        b: pink.b + (softOrange.b - pink.b) * t
     };
 
     return c;
