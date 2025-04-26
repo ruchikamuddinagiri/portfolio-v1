@@ -5,14 +5,14 @@ import "react-vertical-timeline-component/style.min.css";
 import { motion } from "framer-motion";
 import ScrollToTopButton from "./ScrollToTopButton";
 
-import mobileDevelopmentImage from "./assets/mobile_development.gif";
-import research from "./assets/research.gif";
-import lti from "./assets/lti.avif";
-import intern from "./assets/intern.gif";
-import gssoc from "./assets/gssoc.gif";
-import swoc from "./assets/swoc.avif";
-import gsocextended from "./assets/gsocextended.gif";
-import gra from "./assets/gra.png";
+import mobileDevelopmentImage from "../assets/mobile_development.gif";
+import research from "../assets/research.gif";
+import lti from "../assets/lti.avif";
+import intern from "../assets/intern.gif";
+import gssoc from "../assets/gssoc.gif";
+import swoc from "../assets/swoc.avif";
+import gsocextended from "../assets/gsocextended.gif";
+import gra from "../assets/gra.png";
 
 const About: React.FC = () => {
   useEffect(() => {

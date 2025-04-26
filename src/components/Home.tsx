@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import TypingEffect from "react-typing-effect";
-import me from "./assets/me.jpg"; // ✅ Import your image file
+import me from "../assets/me.jpg";
 
 const Home: React.FC = () => {
     return (
