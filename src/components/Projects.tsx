@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import boxturtle from "./assets/box-turtle.png";
 import remedi from "./assets/remedi.png";
 import contentCraft from "./assets/content-craft.png";
-import ScrollToTopButton from "./components/ScrollToTopButton";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 // Tech Logo Mapping (Using Devicon classes)
 const techIcons: { [key: string]: string } = {

@@ -1,11 +1,11 @@
 import React from "react";
 
-import About from "./About";
-import Projects from "./Projects";
-import Contact from "./Contact";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
-import Home from "./Home";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
 
 
 // App Component

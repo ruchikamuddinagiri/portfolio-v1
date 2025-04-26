@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { motion } from "framer-motion";
-import ScrollToTopButton from "./components/ScrollToTopButton";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 import mobileDevelopmentImage from "./assets/mobile_development.gif";
 import research from "./assets/research.gif";
