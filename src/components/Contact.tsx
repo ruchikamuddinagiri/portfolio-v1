@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import Navbar from "./Navbar";
 import { motion } from "framer-motion";
 
@@ -56,18 +55,6 @@ const Contact: React.FC = () => {
         Whether you have a project in mind, a job opportunity, or just want to chat, feel free to reach out. I'd love to connect!
       </p>
 
-      {/* ✅ Contact Methods */}
-      <div className="flex flex-col space-y-4 text-center ">
-        <a href="mailto:rrmuddinagiri@gmail.com" className="pointer-events-auto bg-gradient-to-r from-pink-600 to-orange-400 bg-clip-text text-transparent hover:text-teal-300 text-lg flex items-center justify-center">
-          <FaEnvelope className="mr-2 text-xl" /> rrmuddinagiri@gmail.com
-        </a>
-        <a href="https://www.linkedin.com/in/ruchika-muddinagiri/" target="_blank" className="pointer-events-auto bg-gradient-to-r from-pink-600 to-orange-400 bg-clip-text text-transparent hover:text-teal-300 text-lg flex items-center justify-center">
-          <FaLinkedin className="mr-2 text-xl" /> LinkedIn
-        </a>
-        <a href="https://github.com/ruchikamuddinagiri"  target="_blank" className="pointer-events-auto bg-gradient-to-r from-pink-600 to-orange-400 bg-clip-text text-transparent hover:text-teal-300 text-lg flex items-center justify-center">
-          <FaGithub className="mr-2 text-xl" /> GitHub
-        </a>
-      </div>
 
       {/* ✅ Contact Form */}
       <form onSubmit={handleSubmit} className="pointer-events-auto mt-8 bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">

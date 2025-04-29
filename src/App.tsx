@@ -18,15 +18,15 @@ const App: React.FC = () => {
         <Home />
       </section>
 
-      <section id="about" className="scroll-smooth min-h-screen flex items-center justify-center">
+      <section id="myjourney" className="scroll-smooth min-h-screen flex items-center justify-center">
         <About />
       </section>
 
-      <section id="projects" className="min-h-screen flex items-center justify-center">
+      <section id="mywork" className="min-h-screen flex items-center justify-center">
         <Projects />
       </section>
 
-      <section id="contact" className="min-h-screen flex items-center justify-center">
+      <section id="let'stalk" className="min-h-screen flex items-center justify-center">
         <Contact />
       </section>
 
