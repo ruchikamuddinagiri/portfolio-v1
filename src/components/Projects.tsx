@@ -72,35 +72,35 @@ const Projects: React.FC = () => {
           </motion.h1>
   
           {/* ✅ Projects listed one below the other */}
-<div className="w-full overflow-hidden">
-  <SimpleMarquee slowdownOnHover repeat={2} className="w-max">
-    {projects.map((project, index) => (
-      <motion.div
-        key={index}
-        className="pointer-events-auto w-[300px] p-6 m-4 bg-[#2a2a2a] rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105"
-        whileHover={{ scale: 1.05 }}
-      >
-        <a href={project.link} target="_blank" rel="noopener noreferrer">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-32 object-cover rounded-lg mb-4"
-          />
-          <h3 className="text-xl font-bold text-teal-400">{project.title}</h3>
-          <p className="text-gray-300 mt-2 text-sm">{project.description}</p>
-          <div className="mt-2 flex flex-wrap gap-1 items-center">
-            {project.techStack.map((tech, i) => (
-              <i
-                key={i}
-                className={`${techIcons[tech]} text-white text-2xl`}
-              ></i>
-            ))}
+          <div className="sm:pointer-events-auto md:pointer-events-auto w-full overflow-hidden">
+            <SimpleMarquee slowdownOnHover repeat={2} className="w-max">
+              {projects.map((project, index) => (
+                <motion.div
+                  key={index}
+                  className="pointer-events-auto w-[300px] p-6 m-4 bg-[#2a2a2a] rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-32 object-cover rounded-lg mb-4"
+                    />
+                    <h3 className="text-xl font-bold text-teal-400">{project.title}</h3>
+                    <p className="text-gray-300 mt-2 text-sm">{project.description}</p>
+                    <div className="mt-2 flex flex-wrap gap-1 items-center">
+                      {project.techStack.map((tech, i) => (
+                        <i
+                          key={i}
+                          className={`${techIcons[tech]} text-white text-2xl`}
+                        ></i>
+                      ))}
+                    </div>
+                  </a>
+                </motion.div>
+              ))}
+            </SimpleMarquee>
           </div>
-        </a>
-      </motion.div>
-    ))}
-  </SimpleMarquee>
-</div>
 
 
   
