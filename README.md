@@ -12,8 +12,6 @@ This project is a fully responsive, animated personal portfolio website.
 
  [Live Demo](https://ruchikam.netlify.app/)
 
-(Replace with your real deployed link)
-
 ---
 
 ## 📚 Tech Stack
