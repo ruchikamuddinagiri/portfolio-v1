@@ -58,7 +58,7 @@ const Projects: React.FC = () => {
     }, []);
 
     return (
-      <div className="relative w-screen min-h-screen text-gray-100">
+      <div className="pointer-events-auto lg:pointer-events-none relative w-screen min-h-screen text-gray-100">
   
         <div className="relative z-10 flex flex-col items-center pt-24 px-6">
           <motion.h1
@@ -72,7 +72,7 @@ const Projects: React.FC = () => {
           </motion.h1>
   
           {/* ✅ Projects listed one below the other */}
-          <div className="sm:pointer-events-auto md:pointer-events-auto w-full overflow-hidden">
+          <div className="w-full overflow-hidden">
             <SimpleMarquee slowdownOnHover repeat={2} className="w-max">
               {projects.map((project, index) => (
                 <motion.div

@@ -79,7 +79,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div className="w-screen min-h-screen text-gray-900">
+    <div className="pointer-events-auto lg:pointer-events-none w-screen min-h-screen text-gray-900">
       <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12">
 
         {/* Gradient Heading */}
@@ -104,7 +104,7 @@ const About: React.FC = () => {
         </motion.p>
 
         {/* Timeline */}
-        <div className="sm:pointer-events-auto md:pointer-events-auto w-full max-w-5xl mb-12 ">
+        <div className="w-full max-w-5xl mb-12 ">
           <VerticalTimeline lineColor="#ffc0cb">
             {timelineItems.map((item, index) => (
               <VerticalTimelineElement
