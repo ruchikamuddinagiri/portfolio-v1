@@ -123,14 +123,14 @@ const Home: React.FC = () => {
 
           <button
             onClick={() => {
-              const nextSection = document.getElementById("myjourney");
+              const nextSection = document.getElementById("overview");
               if (nextSection) {
                 nextSection.scrollIntoView({ behavior: "smooth" });
               }
             }}
             className="pointer-events-auto mt-10 px-6 py-3 bg-gradient-to-r from-pink-600 to-orange-400 text-white rounded-lg text-lg font-semibold shadow-lg hover:scale-105 transform transition-all duration-300"
           >
-            See My Work ↓
+            Explore More ↓
           </button>
 
 

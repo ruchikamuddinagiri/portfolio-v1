@@ -14,7 +14,7 @@ import swoc from "../assets/swoc.avif";
 import gsocextended from "../assets/gsocextended.gif";
 import gra from "../assets/gra.png";
 
-const About: React.FC = () => {
+const WorkExperience: React.FC = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -90,7 +90,7 @@ const About: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          About Me
+          Work Experience
         </motion.h1>
 
         {/* Subtitle */}
@@ -160,4 +160,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About;
+export default WorkExperience;

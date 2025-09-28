@@ -1,62 +1,3 @@
-// import React from "react";
-// import { motion } from "framer-motion";
-
-// const Navbar: React.FC = () => {
-//   return (
-// <nav className="pointer-events-auto fixed top-0 left-0 w-full z-40 bg-gradient-to-r from-pink-500 to-orange-400 backdrop-blur-lg shadow-lg border-b border-white">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="flex justify-between items-center h-16 space-x-6">
-
-//           {/* Home */}
-//           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-//               <a
-//                 href="#home"
-//                 className="text-gray-800 text-lg font-semibold transition duration-500 hover:bg-gradient-to-r hover:from-pink-600 hover:to-orange-400 hover:bg-clip-text hover:text-transparent"
-//               >
-//                 Home
-//               </a>
-//             </motion.div>
-
-
-
-//           {/* My Journey */}
-//           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-//             <a
-//               href="#about"
-//               className="text-gray-800 text-lg font-semibold transition duration-500 hover:bg-gradient-to-r hover:from-pink-600 hover:to-orange-400 hover:bg-clip-text hover:text-transparent"
-//               >
-//               My Journey
-//             </a>
-//           </motion.div>
-
-//           {/* My Work */}
-//           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-//             <a
-//               href="#projects"
-//               className="text-gray-800 text-lg font-semibold transition duration-500 hover:bg-gradient-to-r hover:from-pink-600 hover:to-orange-400 hover:bg-clip-text hover:text-transparent"
-//               >
-//               My Work
-//             </a>
-//           </motion.div>
-
-//           {/* Contact Me */}
-//           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-//             <a
-//               href="#contact"
-//               className="text-gray-800 text-lg font-semibold transition duration-500 hover:bg-gradient-to-r hover:from-pink-600 hover:to-orange-400 hover:bg-clip-text hover:text-transparent"
-//               >
-//               Let's Talk
-//             </a>
-//           </motion.div>
-
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
@@ -81,16 +22,21 @@ const Navbar: React.FC = () => {
 
       {/* Desktop Links */}
       <div className="hidden md:flex space-x-6">
-        {["Home", "My Journey", "My Work", "Let's Talk"].map((item, idx) => (
-          <motion.div key={idx} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-            <a
-              href={`#${item.toLowerCase().replace(/\s+/g, '')}`}
-              className="text-white/90 text-lg font-medium tracking-wide transition-colors duration-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 rounded"
-            >
-              {item}
-            </a>
-          </motion.div>
-        ))}
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <a href="#home" className="text-white/90 text-lg font-medium tracking-wide">Home</a>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <a href="#overview" className="text-white/90 text-lg font-medium tracking-wide">Overview</a>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <a href="#workexperience" className="text-white/90 text-lg font-medium tracking-wide">Work Experience</a>
+        </motion.div>
+        {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <a href="#projects" className="text-white/90 text-lg font-medium tracking-wide">Projects</a>
+        </motion.div> */}
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <a href="#contact" className="text-white/90 text-lg font-medium tracking-wide">Let's Talk</a>
+        </motion.div>
       </div>
 
       {/* Mobile Hamburger */}
@@ -140,16 +86,21 @@ const Navbar: React.FC = () => {
   {isOpen && (
     <div className="md:hidden bg-gradient-to-r from-pink-500 to-orange-400 backdrop-blur-lg shadow-lg border-t border-white">
       <div className="flex flex-col items-center space-y-4 py-4">
-        {["Home", "My Journey", "My Work", "Let's Talk"].map((item, idx) => (
-          <a
-            key={idx}
-            href={`#${item.toLowerCase().replace(/\s+/g, '')}`}
-            onClick={() => setIsOpen(false)}
-            className="text-white text-lg font-semibold transition duration-500 hover:bg-gradient-to-r hover:from-pink-600 hover:to-orange-400 hover:bg-clip-text hover:text-transparent"
-          >
-            {item}
-          </a>
-        ))}
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <a href="#home" className="text-white/90 text-lg font-medium tracking-wide">Home</a>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <a href="#overview" className="text-white/90 text-lg font-medium tracking-wide">Overview</a>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <a href="#workexperience" className="text-white/90 text-lg font-medium tracking-wide">Work Experience</a>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <a href="#projects" className="text-white/90 text-lg font-medium tracking-wide">Projects</a>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <a href="#contact" className="text-white/90 text-lg font-medium tracking-wide">Let's Talk</a>
+        </motion.div>
       </div>
     </div>
   )}

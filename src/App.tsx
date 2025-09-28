@@ -1,11 +1,12 @@
 import React from "react";
 
-import About from "./components/About";
+import WorkExperience from "./components/About";
 // import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import Overview from "./components/Overview";
 
 
 // App Component
@@ -18,15 +19,20 @@ const App: React.FC = () => {
         <Home />
       </section>
 
-      <section id="myjourney" className="scroll-smooth min-h-screen flex items-center justify-center">
-        <About />
+      <section id="overview" className="scroll-smooth min-h-screen flex items-center justify-center">
+        <Overview />
       </section>
 
+      <section id="workexperience" className="scroll-smooth min-h-screen flex items-center justify-center">
+        <WorkExperience />
+      </section>
+
+      
       {/* <section id="mywork" className="min-h-screen flex items-center justify-center">
         <Projects />
       </section> */}
 
-      <section id="let'stalk" className="min-h-screen flex items-center justify-center">
+      <section id="contact" className="min-h-screen flex items-center justify-center">
         <Contact />
       </section>
 
