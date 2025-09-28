@@ -1,7 +1,7 @@
 import React from "react";
 
 import About from "./components/About";
-import Projects from "./components/Projects";
+// import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -22,9 +22,9 @@ const App: React.FC = () => {
         <About />
       </section>
 
-      <section id="mywork" className="min-h-screen flex items-center justify-center">
+      {/* <section id="mywork" className="min-h-screen flex items-center justify-center">
         <Projects />
-      </section>
+      </section> */}
 
       <section id="let'stalk" className="min-h-screen flex items-center justify-center">
         <Contact />

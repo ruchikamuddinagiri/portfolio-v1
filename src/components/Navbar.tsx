@@ -59,6 +59,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Logo from "./Logo";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,21 +73,19 @@ const Navbar: React.FC = () => {
       
       {/* Logo */}
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-        <a
-          href="#home"
-          className="text-white text-xl font-bold transition duration-500"
-        >
-          Ruchika
+        <a href="#home" className="flex items-center gap-2">
+          <Logo /> {/* Your new SVG logo component */}
+          <span className="sr-only">Ruchika</span>
         </a>
       </motion.div>
 
       {/* Desktop Links */}
       <div className="hidden md:flex space-x-6">
         {["Home", "My Journey", "My Work", "Let's Talk"].map((item, idx) => (
-          <motion.div key={idx} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <motion.div key={idx} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
             <a
               href={`#${item.toLowerCase().replace(/\s+/g, '')}`}
-              className="text-white text-lg font-semibold transition duration-500 hover:bg-gradient-to-r hover:from-pink-600 hover:to-orange-400 hover:bg-clip-text hover:text-transparent"
+              className="text-white/90 text-lg font-medium tracking-wide transition-colors duration-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 rounded"
             >
               {item}
             </a>

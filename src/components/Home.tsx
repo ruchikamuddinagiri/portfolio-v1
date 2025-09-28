@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import TypingEffect from "react-typing-effect";
-import me from "../assets/me.jpg";
+import me from "../assets/me.png";
 import VariableFontCursorProximity from "@/fancy/components/text/variable-font-cursor-proximity"
 import { cn } from "@/lib/utils"
 import { useEffect, useRef } from "react"
@@ -39,11 +39,12 @@ const Home: React.FC = () => {
               
               {/* Left Side: Profile Picture */}
               <div className="flex-shrink-0">
-                <img
-                  src={me}
-                  alt="Ruchika Profile"
-                  className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-pink-300"
-                />
+                <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-pink-500 via-rose-400 to-orange-400 opacity-40 blur-3xl pointer-events-none" />
+                  <img
+                    src={me}
+                    alt="Ruchika Profile"
+                    className="relative w-40 h-60 md:w-80 md:h-100 rounded-full object-cover ring-4 ring-white"
+                  />
               </div>
 
               {/* Right Side: Typing Text */}
