@@ -10,7 +10,7 @@ import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 const Home: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null)
 
-  const texts = ["Full Stack Engineer | AI-Driven Product Development | MS CS @ Clemson University"];
+  const texts = ["Full Stack Engineer | AI-Driven Product Development | MS CS'24 @ Clemson University"];
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
