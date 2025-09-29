@@ -43,14 +43,14 @@ const Home: React.FC = () => {
                   <img
                     src={me}
                     alt="Ruchika Profile"
-                    className="relative w-40 h-60 md:w-80 md:h-100 rounded-full object-cover ring-4 ring-white"
+                    className="pointer-events-auto relative w-40 h-60 md:w-80 md:h-100 rounded-full object-cover ring-4 ring-white"
                   />
               </div>
 
               {/* Right Side: Typing Text */}
               <div className="text-center md:text-left">
                 <h1 
-                  className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-pink-600 to-orange-400 bg-clip-text text-transparent"
+                  className="pointer-events-auto text-4xl md:text-6xl font-bold bg-gradient-to-r from-pink-600 to-orange-400 bg-clip-text text-transparent"
                   style={{
                     WebkitTextStroke: '1px rgba(0,0,0,0.4)'
                   }}
