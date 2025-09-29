@@ -1,76 +1,76 @@
 import { useRef } from "react";
 
-type Skill = { name: string; level?: number; note?: string };
+type Skill = { name: string; iconClass?: string  };
 
 const groups: { title: string; items: Skill[] }[] = [
   {
     title: "Languages",
     items: [
-      { name: "JavaScript", level: 90 },
-      { name: "TypeScript", level: 90 },
-      { name: "Python", level: 90 },
-      { name: "Kotlin", level: 75 },
-      { name: "Java", level: 70 },
+      { name: "JavaScript", iconClass: "devicon-javascript-plain colored" },
+      { name: "TypeScript", iconClass: "devicon-typescript-plain colored" },
+      { name: "Python",     iconClass: "devicon-python-plain colored" },
+      { name: "Kotlin",     iconClass: "devicon-kotlin-plain colored" },
+      { name: "Java",       iconClass: "devicon-java-plain colored" },
     ],
   },
   {
     title: "Frontend",
     items: [
-      { name: "HTML/CSS", level: 90 },
-      { name: "React", level: 90, note: "Hooks, Vite" },
-      { name: "Angular", level: 90, note: "Hooks, Vite" },
-      { name: "Vue", level: 90, note: "Hooks, Vite" },
-      { name: "TailwindCSS", level: 90 },
-      { name: "Framer Motion", level: 75 },
-      { name: "React Native", level: 70 },
+      { name: "HTML/CSS",      iconClass: "devicon-html5-plain colored" },
+      { name: "React",         iconClass: "devicon-react-original colored" },
+      { name: "Angular",       iconClass: "devicon-angularjs-plain colored" },
+      { name: "Vue",           iconClass: "devicon-vuejs-plain colored" },
+      { name: "TailwindCSS",   iconClass: "devicon-tailwindcss-plain colored" },
+      { name: "Framer Motion", iconClass: "devicon-framer-plain colored" },
+      { name: "React Native",  iconClass: "devicon-react-original colored" },
     ],
   },
   {
     title: "Backend",
     items: [
-      { name: "Node.js", level: 90 },
-      { name: "Next.js", level: 75 },
-      { name: "Express.js", level: 80 },
-      { name: "GraphQL", level: 70 },
-      { name: "SpringBoot", level: 75 },
-      { name: "FastAPI", level: 80 },
-      { name: "Django", level: 80 },
-      { name: "Rest API", level: 75 },
-      { name: "Microservices", level: 70 },
+      { name: "Node.js",      iconClass: "devicon-nodejs-plain colored" },
+      { name: "Next.js",      iconClass: "devicon-nextjs-original" },
+      { name: "Express.js",   iconClass: "devicon-express-original" },
+      { name: "GraphQL",      iconClass: "devicon-graphql-plain colored" },
+      { name: "Spring Boot",  iconClass: "devicon-spring-plain colored" },
+      { name: "FastAPI",      iconClass: "devicon-fastapi-plain colored" },
+      { name: "Django",       iconClass: "devicon-django-plain colored" },
+      { name: "REST API",     iconClass: "devicon-swagger-plain colored" }, // OpenAPI/Swagger
+      { name: "Microservices" }, // no devicon; fallback renders
     ],
   },
   {
     title: "Databases",
     items: [
-      { name: "MongoDB", level: 70 },
-      { name: "PostgreSQL", level: 70 },
-      { name: "IBM Cognos TM1", level: 55 },
-      { name: "MySQL", level: 65 },
-      { name: "DynamoDB", level: 65 },
-      { name: "CockroachDB", level: 65 },
+      { name: "MongoDB",     iconClass: "devicon-mongodb-plain colored" },
+      { name: "PostgreSQL",  iconClass: "devicon-postgresql-plain colored" },
+      { name: "IBM Cognos TM1" }, // no devicon
+      { name: "MySQL",       iconClass: "devicon-mysql-plain colored" },
+      { name: "DynamoDB",    iconClass: "devicon-dynamodb-plain colored" },
+      { name: "CockroachDB", iconClass: "devicon-cockroachdb-plain colored" },
     ],
   },
   {
     title: "Cloud & DevOps",
     items: [
-      { name: "AWS", level: 90 },
-      { name: "GCP", level: 85 },
-      { name: "Terraform", level: 60 },
-      { name: "Docker", level: 70 },
-      { name: "Kubernetes", level: 55 },
-      { name: "Gitlab CI/CD", level: 65 },
+      { name: "AWS",        iconClass: "devicon-amazonwebservices-original colored" },
+      { name: "GCP",        iconClass: "devicon-googlecloud-plain colored" },
+      { name: "Terraform",  iconClass: "devicon-terraform-plain colored" },
+      { name: "Docker",     iconClass: "devicon-docker-plain colored" },
+      { name: "Kubernetes", iconClass: "devicon-kubernetes-plain colored" },
+      { name: "GitLab CI/CD", iconClass: "devicon-gitlab-plain colored" },
     ],
   },
   {
     title: "AI / ML",
     items: [
-      { name: "OpenAI", level: 75 },
-      { name: "BERT", level: 70 },
-      { name: "Hugging Face", level: 60 },
-      { name: "Langchain", level: 60 },
-      { name: "RAG", level: 60 },
-      { name: "TensorFlow", level: 50 },
-      { name: "PyTorch", level: 50 }, 
+      { name: "OpenAI",       iconClass: "devicon-openai-plain colored" },
+      { name: "BERT" }, // no devicon
+      { name: "Hugging Face", iconClass: "devicon-huggingface-plain colored" },
+      { name: "LangChain" },  // no devicon
+      { name: "RAG" },        // concept; no devicon
+      { name: "TensorFlow",   iconClass: "devicon-tensorflow-original colored" },
+      { name: "PyTorch",      iconClass: "devicon-pytorch-original colored" },
     ],
   },
 ];
@@ -90,8 +90,8 @@ function SkewCard({
     const rect = el.getBoundingClientRect();
     const px = (e.clientX - rect.left) / rect.width;  // 0..1
     const py = (e.clientY - rect.top) / rect.height;  // 0..1
-    const rotX = (py - 0.5) * -10; // tilt up/down
-    const rotY = (px - 0.5) * 10;  // tilt left/right
+    const rotX = (py - 0.5) * -45; // tilt up/down
+    const rotY = (px - 0.5) * 45;  // tilt left/right
     el.style.setProperty("--rx", `${rotX}deg`);
     el.style.setProperty("--ry", `${rotY}deg`);
     el.style.setProperty("--px", `${px * 100}%`);
@@ -138,9 +138,8 @@ function SkewCard({
       />
 
       <div className="relative p-5">
-        <div className="mb-3 flex items-center gap-2">
-          <div className="h-2 w-2 rounded-full bg-emerald-500" />
-          <h3 className="font-semibold text-slate-900">{title}</h3>
+        <div className="relative -mx-5 -mt-5 mb-4 rounded-t-2xl bg-gradient-to-r from-pink-500 via-rose-400 to-orange-400 px-5 py-3 shadow-sm">
+          <h3 className="text-white font-semibold tracking-wide">{title}</h3>
         </div>
         {children}
       </div>
@@ -176,25 +175,19 @@ export default function Overview() {
               <ul className="space-y-3">
                 {g.items.map((s) => (
                   <li key={s.name}>
-                    <div className="flex items-center justify-between">
-                      <span className="text-slate-800 font-medium">{s.name}</span>
-                      {typeof s.level === "number" && (
-                        <span className="text-xs text-slate-500 tabular-nums">
-                          {s.level}%
-                        </span>
-                      )}
-                    </div>
-                    {/* {typeof s.level === "number" && (
-                      <div className="mt-2 h-2 w-full rounded-full bg-slate-200/70 overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-to-r from-pink-500 to-orange-400 rounded-full transition-[width] duration-700"
-                          style={{ width: `${s.level}%` }}
+                    <div className="flex items-center gap-3">
+                      {s.iconClass ? (
+                        <i className={`${s.iconClass} text-[22px]`} aria-hidden="true" />
+                      ) : (
+                        // fallback for items without a devicon (e.g., Ollama)
+                        <span
+                          aria-hidden="true"
+                          className="inline-block h-[18px] w-[18px] rounded-sm bg-slate-300"
+                          title="icon"
                         />
-                      </div>
-                    )} */}
-                    {s.note && (
-                      <p className="mt-1 text-xs text-slate-500">{s.note}</p>
-                    )}
+                      )}
+                      <span className="text-slate-800 font-medium">{s.name}</span>
+                    </div>
                   </li>
                 ))}
               </ul>
