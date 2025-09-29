@@ -156,13 +156,13 @@ export default function Overview() {
         className="pointer-events-none absolute inset-x-0 -top-24 mx-auto h-64 w-[48rem]
                    bg-gradient-to-r from-pink-300/30 via-rose-300/30 to-orange-300/30 blur-3xl"
       />
-      <div className="relative mx-auto max-w-6xl px-6">
+      <div className="pointer-events-auto relative mx-auto max-w-6xl px-6">
         <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
           Overview
         </h2>
 
         {/* Description above the grid */}
-        <p className="mt-4 text-slate-700 max-w-3xl">
+        <p className="pointer-events-auto mt-4 text-slate-700 max-w-3xl">
           I build scalable web, mobile, and AI applications end-to-end. My focus is on clean UX,
           robust APIs, and cloud-ready architectures. I work across React/TypeScript, Node/Express,
           and PostgreSQL, with AWS, Docker/Kubernetes, and CI/CD to ship secure, reliable software.
