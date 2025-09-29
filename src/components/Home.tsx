@@ -62,7 +62,7 @@ const Home: React.FC = () => {
 
                 <motion.a
                   whileHover={{ scale: 1.2 }}
-                  href="https://www.linkedin.com/in/yourlinkedinprofile"
+                  href="https://www.linkedin.com/in/ruchika-muddinagiri/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group transition"
