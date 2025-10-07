@@ -74,8 +74,26 @@ pointers.push(new pointerPrototype());
 
 const { gl, ext } = getWebGLContext(canvas);
 
-if (isMobile()) {
-    config.DYE_RESOLUTION = 512;
+// Enhanced mobile and small screen detection
+function isSmallScreen() {
+    return window.innerWidth < 768 || window.innerHeight < 600;
+}
+
+function isVerySmallScreen() {
+    return window.innerWidth < 480 || window.innerHeight < 480;
+}
+
+if (isMobile() || isSmallScreen()) {
+    config.DYE_RESOLUTION = isVerySmallScreen() ? 256 : 512;
+    config.SIM_RESOLUTION = isVerySmallScreen() ? 64 : 96;
+    config.PRESSURE_ITERATIONS = isVerySmallScreen() ? 10 : 15;
+    config.BLOOM_ITERATIONS = 4;
+    config.SUNRAYS_RESOLUTION = 128;
+    if (isVerySmallScreen()) {
+        config.SUNRAYS = false;
+        config.BLOOM = false;
+        config.SHADING = false;
+    }
 }
 if (!ext.supportLinearFiltering) {
     config.DYE_RESOLUTION = 512;
@@ -1142,9 +1160,24 @@ multipleSplats(parseInt(Math.random() * 20) + 5);
 
 let lastUpdateTime = Date.now();
 let colorUpdateTimer = 0.0;
+
+// Performance optimization: Frame rate limiting for small screens
+let frameSkipCounter = 0;
+const frameSkipLimit = isVerySmallScreen() ? 2 : (isSmallScreen() ? 1 : 0);
+
 update();
 
 function update () {
+    // Frame skipping for performance on small screens
+    if (frameSkipLimit > 0) {
+        frameSkipCounter++;
+        if (frameSkipCounter <= frameSkipLimit) {
+            requestAnimationFrame(update);
+            return;
+        }
+        frameSkipCounter = 0;
+    }
+
     const dt = calcDeltaTime();
     if (resizeCanvas())
         initFramebuffers();
@@ -1170,6 +1203,16 @@ function resizeCanvas () {
     if (canvas.width != width || canvas.height != height) {
         canvas.width = width;
         canvas.height = height;
+        
+        // Dynamically adjust quality on resize for better performance
+        if (isVerySmallScreen()) {
+            config.DYE_RESOLUTION = Math.min(config.DYE_RESOLUTION, 256);
+            config.SIM_RESOLUTION = Math.min(config.SIM_RESOLUTION, 64);
+        } else if (isSmallScreen()) {
+            config.DYE_RESOLUTION = Math.min(config.DYE_RESOLUTION, 512);
+            config.SIM_RESOLUTION = Math.min(config.SIM_RESOLUTION, 96);
+        }
+        
         return true;
     }
     return false;
@@ -1632,6 +1675,14 @@ function getTextureScale (texture, width, height) {
 
 function scaleByPixelRatio (input) {
     let pixelRatio = window.devicePixelRatio || 1;
+    
+    // Reduce pixel ratio on small screens for better performance
+    if (isVerySmallScreen()) {
+        pixelRatio = Math.min(pixelRatio, 1.5);
+    } else if (isSmallScreen()) {
+        pixelRatio = Math.min(pixelRatio, 2);
+    }
+    
     return Math.floor(input * pixelRatio);
 }
 
