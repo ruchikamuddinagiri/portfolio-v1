@@ -27,15 +27,15 @@ const Home: React.FC = () => {
   }, []);
 
     return (
-      <div className="w-screen min-h-screen text-gray-100 flex flex-col items-center justify-center pointer-events-none">
+      <div className="w-full max-w-full min-h-screen text-gray-100 flex flex-col items-center justify-center pointer-events-none overflow-hidden">
         <motion.div
-            className="relative z-10 flex flex-col items-center text-center mt-20"
+            className="relative z-10 flex flex-col items-center text-center mt-20 px-4 max-w-full"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
             {/* New Flex Container */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-10 mb-8">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-10 mb-8 w-full max-w-6xl px-4">
               
               {/* Left Side: Profile Picture */}
               <div className="flex-shrink-0">
@@ -48,9 +48,9 @@ const Home: React.FC = () => {
               </div>
 
               {/* Right Side: Typing Text */}
-              <div className="text-center md:text-left">
+              <div className="text-center md:text-left max-w-full">
                 <h1 
-                  className="pointer-events-auto text-4xl md:text-6xl font-bold bg-gradient-to-r from-pink-600 to-orange-400 bg-clip-text text-transparent"
+                  className="pointer-events-auto text-3xl sm:text-4xl md:text-6xl font-bold bg-gradient-to-r from-pink-600 to-orange-400 bg-clip-text text-transparent break-words"
                   style={{
                     WebkitTextStroke: '1px rgba(0,0,0,0.4)'
                   }}
@@ -107,12 +107,12 @@ const Home: React.FC = () => {
             {/* Sub Text */}
             <div 
             ref = {containerRef}
-            className="description-text pointer-events-auto touch-auto text-lg md:text-xl text-gray-800 max-w-3xl">
+            className="description-text pointer-events-auto touch-auto text-lg md:text-xl text-gray-800 max-w-5xl w-full px-4">
             {texts.map((text, i) => (
               <VariableFontCursorProximity
                 key={i}
                 label={text}
-                className={cn("text-xl md:text-3xl lg:text-4xl leading-tight")}
+                className={cn("text-lg sm:text-xl md:text-2xl lg:text-3xl leading-tight break-words")}
                 fromFontVariationSettings="'wght' 400, 'slnt' 0"
                 toFontVariationSettings="'wght' 900, 'slnt' -10"
                 radius={200}
