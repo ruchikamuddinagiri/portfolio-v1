@@ -162,11 +162,10 @@ export default function Overview() {
 
         {/* Description above the grid */}
         <p className="pointer-events-auto mt-4 text-slate-700 max-w-3xl">
-          I build scalable web, mobile, and AI applications end-to-end. My focus is on clean UX,
-          robust APIs, and cloud-ready architectures. I work across React/TypeScript, Node/Express,
-          and PostgreSQL, with AWS, Docker/Kubernetes, and CI/CD to ship secure, reliable software.
-          Recently, I’ve explored RAG-based assistants and real-time security workflows.
-        </p>
+          I’m an experienced computer science professional with a Master’s in Computer Science from Clemson University, bringing a solid foundation in software development, data engineering, cloud computing and machine learning. I’m proficient in Python, TypeScript, JavaScript, Java, C#, and Go, and have hands-on experience with frameworks such as Flask, Django, Node.js, Spring Boot, and Express.js.
+          <br></br>
+I’m a fast learner and collaborative problem-solver who enjoys building efficient, scalable, and user-centric solutions that solve real-world challenges. I’m excited to contribute my skills to impactful projects — let’s connect and explore how we can create something exceptional together!
+          </p>
 
         {/* Grid of skills */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

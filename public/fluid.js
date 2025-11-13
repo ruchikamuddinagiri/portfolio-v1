@@ -30,14 +30,14 @@ resizeCanvas();
 let config = {
     SIM_RESOLUTION: 128,
     DYE_RESOLUTION: 1024,
-    CAPTURE_RESOLUTION: 512,
+    CAPTURE_RESOLUTION: 256,
     DENSITY_DISSIPATION: 4,
     VELOCITY_DISSIPATION: 1.22,
     PRESSURE: 0.8,
-    PRESSURE_ITERATIONS: 20,
+    PRESSURE_ITERATIONS: 10,
     CURL: 6,
-    SPLAT_RADIUS: 0.38,
-    SPLAT_FORCE: 4000,
+    SPLAT_RADIUS: 0.2,
+    SPLAT_FORCE: 1000,
     SHADING: true,
     COLORFUL: false,
     COLOR_UPDATE_SPEED: 10,
@@ -46,11 +46,11 @@ let config = {
     TRANSPARENT: false,
     BLOOM: false,
     BLOOM_ITERATIONS: 8,
-    BLOOM_RESOLUTION: 256,
+    BLOOM_RESOLUTION: 128,
     BLOOM_INTENSITY: 0.4,
     BLOOM_THRESHOLD: 0.7,
     BLOOM_SOFT_KNEE: 0.8,
-    SUNRAYS: true,
+    SUNRAYS: false,
     SUNRAYS_RESOLUTION: 196,
     SUNRAYS_WEIGHT: 1.0,
 }
@@ -1451,6 +1451,13 @@ function multipleSplats (amount) {
         splat(x, y, dx, dy, color);
     }
 }
+
+// Make multipleSplats available globally for navbar triggers
+window.triggerFluidAnimation = function(amount = 8) {
+    if (typeof multipleSplats === 'function') {
+        multipleSplats(amount);
+    }
+};
 
 function splat (x, y, dx, dy, color) {
     splatProgram.bind();

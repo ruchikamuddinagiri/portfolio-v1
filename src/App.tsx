@@ -12,18 +12,18 @@ import Overview from "./components/Overview";
 // App Component
 const App: React.FC = () => {
   return (
-    <div className="scroll-smooth text-gray-100 relative">
+    <div className="scroll-smooth text-gray-100 relative w-full max-w-full overflow-x-hidden">
       <Navbar />
 
-      <section id="home" className="min-h-screen flex items-center justify-center">
+      <section id="home" className="min-h-screen flex items-center justify-center w-full max-w-full">
         <Home />
       </section>
 
-      <section id="overview" className="scroll-smooth min-h-screen flex items-center justify-center">
+      <section id="overview" className="scroll-smooth min-h-screen flex items-center justify-center w-full max-w-full">
         <Overview />
       </section>
 
-      <section id="workexperience" className="scroll-smooth min-h-screen flex items-center justify-center">
+      <section id="workexperience" className="scroll-smooth min-h-screen flex items-center justify-center w-full max-w-full">
         <WorkExperience />
       </section>
 
@@ -32,7 +32,7 @@ const App: React.FC = () => {
         <Projects />
       </section> */}
 
-      <section id="contact" className="min-h-screen flex items-center justify-center">
+      <section id="contact" className="min-h-screen flex items-center justify-center w-full max-w-full">
         <Contact />
       </section>
 
